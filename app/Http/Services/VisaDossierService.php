@@ -48,6 +48,11 @@ class VisaDossierService
         try {
             /** @var \Illuminate\Http\UploadedFile $file */
             $file = $data['file'];
+
+            if (!$file) {
+               return 'No file provided';
+            }
+
             $originalName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
             $extension = $file->getClientOriginalExtension();
             $filename = Str::slug($originalName) . '-' . time() . '.' . $extension;
