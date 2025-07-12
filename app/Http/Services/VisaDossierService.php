@@ -13,23 +13,23 @@ class VisaDossierService
 {
     public function __construct() {}
 
-    public function getAllDocuments(): Collection|string
+    public function getAllDocuments(): array|string
     {
         try {
             $files = VisaDossierFile::all()
-                ->groupBy('type')
+                ->groupBy('tag')
                 ->map(function ($group) {
                     return $group->map(function ($file) {
                         return [
                             'id' => $file->id,
                             'name' => $file->name,
                             'url' => $file->url,
-                            'ext' => $file->ext,
+                            'type' => $file->type,
                             'tag' => $file->tag,
                             'createdAt' => $file->created_at,
                         ];
                     });
-                });
+                })->toArray();
 
             return $files;
         } catch (Exception $e) {
@@ -60,7 +60,7 @@ class VisaDossierService
                 'path' => $storedPath,
                 'url' => $url,
                 'type' => $data['type'],
-                'tag' => $data['tag'] ?? '',
+                'tag' => $data['tag'],
             ]);
 
             return $visaFile;

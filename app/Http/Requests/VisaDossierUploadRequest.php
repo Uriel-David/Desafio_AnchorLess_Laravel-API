@@ -23,8 +23,8 @@ class VisaDossierUploadRequest extends FormRequest
     {
         return [
             'file' => 'required|file|mimes:pdf,jpg,jpeg,png|max:4096',
-            'type' => 'required|string',
-            'tag'  => 'nullable|string',
+            'type' => 'required|string|in:document,image',
+            'tag'  => 'required|string',
         ];
     }
 }

@@ -21,7 +21,7 @@ class VisaDossierController extends Controller
     {
         $files = $this->visaDossierService->getAllDocuments();
 
-        if (is_string($files)) {
+        if (!is_array($files)) {
             return response()->json(['success' => false, 'data' => [], 'message' => $files], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
 
@@ -49,6 +49,6 @@ class VisaDossierController extends Controller
             return response()->json(['success' => false, 'data' => [], 'message' => $response], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
 
-        return response()->json(['success' => true, 'message' => 'File deleted'], Response::HTTP_OK);
+        return response()->json(['success' => true, 'data' => $response, 'message' => 'File deleted'], Response::HTTP_OK);
     }
 }
