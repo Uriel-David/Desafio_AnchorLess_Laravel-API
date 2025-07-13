@@ -1,9 +1,16 @@
+# Backend (API) - Visa Dossier (PHP + Laravel)
+
+API for uploading, viewing and deleting documents organized by category.
+
 ## Initial Setup
 
 - Project requirements:
     - `PHP 8.2`
     - `Composer`
     - `MySQL` - (By default I used a basic DB with WampServer, but if you use another one change the settings in the .env of the project)
+
+- Clone the backend repository:
+    - `git@github.com:Uriel-David/Desafio_AnchorLess_Laravel-API.git`
 
 - Installation of dependencies: `composer install`
 
