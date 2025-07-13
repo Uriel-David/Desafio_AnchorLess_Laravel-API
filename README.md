@@ -24,6 +24,29 @@ API for uploading, viewing and deleting documents organized by category.
 
 - To check the existing routes in the project, use the command: `php artisan route:list`
 
+## How to use the application
+
+- You can test the API using Postman, the base URL of the endpoints is http://localhost:8000/api.
+
+- The endpoints are:
+    - http://localhost:8000/api/documents/list (GET)
+        - No `body` type required
+    - http://localhost:8000/api/documents/upload (POST)
+        - It needs a `form-data body`:
+            - file - the file itself
+            - type - file type (document or image)
+            - tag - file category
+    - http://localhost:8000/api/documents/delete (DELETE)
+        - It needs a `json body`:
+
+            ```json
+            {
+                "id": 2
+            }
+            ```
+
+- Now all you have to do is make the requests and you'll see the API working.
+
 ## How to run test cases
 
 - First, check that the .env.testing file has an APP_KEY, if not, run this command: `php artisan key:generate --env=testing`
