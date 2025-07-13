@@ -41,9 +41,10 @@ API for uploading, viewing and deleting documents organized by category.
 
             ```json
             {
-                "id": 2 (Value referring to table visa_dossier_files)
+                "id": 2
             }
             ```
+            - id -> Value referring to table visa_dossier_files
 
 - Now all you have to do is make the requests and you'll see the API working.
 
