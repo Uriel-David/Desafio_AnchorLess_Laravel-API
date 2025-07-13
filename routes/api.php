@@ -4,10 +4,6 @@ use App\Http\Controllers\VisaDossierController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
-
 Route::prefix('documents')->group(function () {
     Route::get('/list', [VisaDossierController::class, 'listDocuments']);
     Route::post('/upload', [VisaDossierController::class, 'uploadDocuments']);
