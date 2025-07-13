@@ -26,6 +26,7 @@ class VisaDossierService
                             'url' => $file->url,
                             'type' => $file->type,
                             'tag' => $file->tag,
+                            'ext' => $file->ext,
                             'createdAt' => $file->created_at,
                         ];
                     });
