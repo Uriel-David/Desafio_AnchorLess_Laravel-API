@@ -41,7 +41,7 @@ API for uploading, viewing and deleting documents organized by category.
 
             ```json
             {
-                "id": 2
+                "id": 2 (Value referring to table visa_dossier_files)
             }
             ```
 
